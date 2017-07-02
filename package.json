@@ -11,6 +11,7 @@
     "bundle:clean": "rimraf ./dist/lib.bundle.*",
     "copy:static": "cpx ./src/static/**/* ./dist",
     "test": "karma start",
+    "test:e2e": "testcafe chrome ./e2e/*.test.js --app \"npm run start:dist\" --app-init-delay 2000",
     "start": "webpack-dev-server --config ./config/webpack-dev.config.js --open",
     "start:dist": "serve ./dist"
   },
@@ -39,6 +40,7 @@
     "rimraf": "^2.6.1",
     "sass-loader": "^6.0.6",
     "serve": "^6.0.0",
+    "testcafe": "^0.16.2",
     "ts-loader": "^2.2.1",
     "tslint": "^5.4.3",
     "tslint-loader": "^3.5.3",

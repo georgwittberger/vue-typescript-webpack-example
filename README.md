@@ -17,13 +17,17 @@ Clone the repository and open a terminal in the project directory. Then execute 
 
 Execute the command `npm start` in the project directory. This will bring up a Webpack development server with source watching and live reloading.
 
-### Running the tests
+### Running the unit tests
 
 Execute the command `npm test` in the project directory. This will start Karma and run the unit tests described in the test spec files. A coverage report is generated in the `coverage` directory.
 
 ### Building the distribution
 
 Execute the command `npm run build` in the project directory. This will launch the Webpack build to create compact JavaScript bundles in the `dist` directory which can then be shipped to production.
+
+### Running the end-to-end tests
+
+Execute the command `npm run test:e2e` after building the distribution to start TestCafé and run the end-to-end browser tests described in the test files.
 
 ### Serving the distribution
 
@@ -42,6 +46,10 @@ Source code:
 * **/src/simple**: Source code and test spec file for the simple Vue component.
 * **/src/self-contained**: Source code, test spec and image resources for the self-contained Vue component.
 * **/src/static**: Static resources like a test web page which are simply copied to the distribution during build. This is also the content root for the Webpack development server.
+
+Test code:
+
+* **/e2e**: Directory for the end-to-end test descriptions.
 
 Configuration:
 
@@ -104,6 +112,12 @@ The project is set up to use the fantastic `karma-typescript` module to allow wr
 See the `karma.conf.js` configuration where `karma-typescript` is used as a framework, preprocessor and reporter. This is because it has to kick in at several hooks during test execution (e.g. to transpile TypeScript source code automatically and to generate the Istanbul coverage report).
 
 With that configuration we can simply put the test spec files right next to the source files to be tested. I highly recommend to prefer this organization over a separate `tests` directory. This keeps the real source code and its corresponding test in one place making it easy to understand and maintain.
+
+### End-to-end testing
+
+There is an end-to-end test setup using TestCafé which relies on the distribution to be present in the `dist` directory.
+
+See the `test:e2e` script in the `package.json` file. The command will automatically start serving the distribution and then run all test files placed in the `e2e` directory with the naming pattern `*.test.js`.
 
 ## License
 

@@ -1,0 +1,10 @@
+<!-- Template for the self-contained component. -->
+<div>
+  <form>
+    <p>Your name: <input type="text" v-model="name"></p>
+    <p>Your e-mail address: <input type="text" v-model="email"></p>
+  </form>
+  <p v-if="valid" class="success">
+    <img src="./check.png"> Alright, {{ name }}. So your e-mail address is: {{ email }}, huh?
+  </p>
+</div>

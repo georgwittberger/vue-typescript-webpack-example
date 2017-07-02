@@ -1,0 +1,18 @@
+/* Styles for the self-contained component. */
+
+$input_spacing: 10px;
+$image_spacing: 10px;
+$success_color: green;
+
+input {
+  margin-left: $input_spacing;
+}
+
+.success {
+  color: $success_color;
+}
+
+img {
+  margin-right: $image_spacing;
+  vertical-align: middle;
+}

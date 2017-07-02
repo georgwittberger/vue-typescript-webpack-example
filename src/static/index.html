@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Vue + TypeScript + Webpack Example</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="styles.css" rel="stylesheet">
+</head>
+
+<body>
+  <h1>Vue + TypeScript + Webpack Example</h1>
+
+  <h2>Simple component</h2>
+  <!-- The simple component expects its template to be contained in the DOM element that the component is bound to. -->
+  <!-- See: /src/simple/simple-component.ts -->
+  <div id="simple-component">
+    <p>Let me say: {{ message }}</p>
+    <button type="button" @click="changeMessage">Say something else</button>
+  </div>
+
+  <hr>
+
+  <h2>Self-contained component</h2>
+  <!-- The self-contained component brings its own template and styles and therefore only requires an empty element. -->
+  <!-- See /src/self-contained/self-contained-component.vue,ts,html,scss -->
+  <div id="self-contained"></div>
+
+  <hr>
+
+  <!-- The vendor bundle contains all libraries requires for the app. -->
+  <script src="vendor.bundle.js"></script>
+  <!-- The app bundle contains our own application modules. -->
+  <!-- See /src/app.ts -->
+  <script src="app.bundle.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+{
+  "name": "vue-typescript-webpack-example",
+  "version": "1.0.0",
+  "description": "Example project demonstrating how to write Vue components in TypeScript und bundling them with Webpack",
+  "main": "src/app.ts",
+  "scripts": {
+    "clean": "rimraf ./dist ./coverage",
+    "build": "npm run bundle:prod && npm run bundle:clean && npm run copy:static",
+    "bundle:dev": "webpack --config ./config/webpack-dev.config.js",
+    "bundle:prod": "cross-env NODE_ENV=production webpack --config ./config/webpack-prod.config.js",
+    "bundle:clean": "rimraf ./dist/lib.bundle.*",
+    "copy:static": "cpx ./src/static/**/* ./dist",
+    "test": "karma start",
+    "start": "webpack-dev-server --config ./config/webpack-dev.config.js --open",
+    "start:dist": "serve ./dist"
+  },
+  "author": "Georg Wittberger <georg.wittberger@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/georgwittberger/vue-typescript-webpack-example.git"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "vue": "^2.3.4",
+    "vue-class-component": "^5.0.2"
+  },
+  "devDependencies": {
+    "@types/jasmine": "^2.5.53",
+    "cpx": "^1.5.0",
+    "cross-env": "^5.0.1",
+    "css-loader": "^0.28.4",
+    "file-loader": "^0.11.2",
+    "jasmine": "^2.6.0",
+    "karma": "^1.7.0",
+    "karma-jasmine": "^1.1.0",
+    "karma-phantomjs-launcher": "^1.0.4",
+    "karma-typescript": "^3.0.4",
+    "node-sass": "^4.5.3",
+    "rimraf": "^2.6.1",
+    "sass-loader": "^6.0.6",
+    "serve": "^6.0.0",
+    "ts-loader": "^2.2.1",
+    "tslint": "^5.4.3",
+    "tslint-loader": "^3.5.3",
+    "typescript": "^2.4.1",
+    "url-loader": "^0.5.9",
+    "vue-loader": "^13.0.0",
+    "vue-template-compiler": "^2.3.4",
+    "webpack": "^3.0.0",
+    "webpack-dev-server": "^2.5.0",
+    "webpack-merge": "^4.1.0"
+  }
+}

@@ -1,0 +1,16 @@
+/* Global styles */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 30px;
+}
+
+h1 {
+  border-bottom: 1px solid silver;
+  padding-bottom: 10px;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid silver;
+  margin: 20px 0;
+}
